@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import AddCar from "./AddCar";
 function CarList() {
-  const api ="http://localhost:8000/api/cars";
+  const api = "http://localhost:8000/api/cars";
   const [cars, setCars] = useState([]);
   const getCars = () => {
     axios
@@ -14,7 +14,7 @@ function CarList() {
       .catch(function (error) {
         // handle error
         console.log(error);
-      })  
+      })
       .then(function () {
         // always executed
       });
@@ -25,6 +25,7 @@ function CarList() {
   return (
     <div>
       <h2>Danh Sách xe</h2>
+      <AddCar />
       <table className="table">
         <thead>
           <tr>
