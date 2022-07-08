@@ -8,7 +8,7 @@ function CarList() {
     axios
       .get(api)
       .then(function (response) {
-        setCars(response.data.data)
+        setCars(response.data.data);
         console.log(response.data.data);
       })
       .catch(function (error) {
@@ -25,7 +25,7 @@ function CarList() {
   return (
     <div>
       <h2>Danh Sách xe</h2>
-      <AddCar />
+      <AddCar getCars={getCars} />
       <table className="table">
         <thead>
           <tr>
@@ -45,7 +45,7 @@ function CarList() {
                 <td>{car.decription}</td>
                 <td>{car.produced_on}</td>
                 <td>
-                  <img width="100px" height="100px" src={car.images} alt="" />
+                  <img width="100px" height="100px" src={car.images} />
                 </td>
               </tr>
             ))
